@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<robot name="g2wd" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  
+  <xacro:include filename="$(find gazebo_2wd_robot)/urdf/materials.xacro"/>
+  <!--<xacro:include filename="$(find gazebo_2wd_robot)/urdf/g2wd.gazebo"/>-->
+  <xacro:include filename="$(find gazebo_2wd_robot)/urdf/macros.xacro"/>
+  
+  <xacro:chassis/>
+  
+  <xacro:lidar mass="1" r="0.05" l="0.1"/>
+  
+  <xacro:link_wheel link_name="link_right_wheel"/>
+  
+  <xacro:wheel_joint position="right" x="-0.05" y="0.15" z="0" child="link_right_wheel"/>
+    
+  <xacro:link_wheel link_name="link_left_wheel"/>
+  
+  <xacro:wheel_joint position="left" x="-0.05" y="-0.15" z="0" child="link_left_wheel"/>
+  
+</robot>

@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <robot>
 <gazebo reference="link_chassis">
-    <material>Gazebo/Orange</material>
+    <material>Gazebo/Red</material>
   </gazebo>
   <gazebo reference="link_left_wheel">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Black</material>
   </gazebo>
   <gazebo reference="link_right_wheel">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Black</material>
   </gazebo>
   
   <gazebo>
@@ -28,6 +28,7 @@
   </gazebo>
   
   <gazebo reference="sensor_laser">
+  <material>Gazebo/Black</material>
     <sensor type="ray" name="head_hokuyo_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>false</visualize>

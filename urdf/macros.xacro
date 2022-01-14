@@ -13,18 +13,20 @@
     <!-- body -->
     <collision name="collision_chassis">
       <geometry>
-        <!--<box size="0.5 0.3 0.07"/>-->
-        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Chasis.stl" scale="0.001 0.001 0.001"/>
+        <box size="0.5 0.3 0.07"/>
+        <!--<mesh filename="package://amr_2wr/models/amr_2wr/meshes/Chasis.stl" scale="0.001 0.001 0.001"/>-->
       </geometry>
     </collision>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 -1.5707" xyz="0.075 -0.055 -0.1"/>
       <geometry>
         <!--<box size="0.5 0.3 0.07"/>-->
-        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Chasis.stl" scale="0.001 0.001 0.001"/>
+        
+        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Chasis.stl" scale="0.00185 0.00185 0.00185" />
       </geometry>
-      <material name="blue"/>
+      <material name="red"/>
     </visual>
+    
     <!-- caster front -->
     <collision name="caster_front_collision">
       <origin rpy=" 0 0 0" xyz="0.2 0 -0.05"/>
@@ -45,7 +47,7 @@
     <visual name="caster_front_visual">
       <origin rpy=" 0 0 0" xyz="0.2 0 -0.05"/>
       <geometry>
-        <sphere radius="0.05"/>
+        <sphere radius="0.001"/>
       </geometry>
     </visual>
     
@@ -63,15 +65,16 @@
     	<collision name="${link_name}_collision">
       	<origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
       	<geometry>
-        <!--<cylinder length="0.04" radius="0.1"/>-->
-        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.001 0.001 0.001"/> 
+        <cylinder length="0.04" radius="0.1"/>
+        <!--<mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.001 0.001 0.001"/>-->
       	</geometry>
     	</collision>
     	<visual name="${link_name}_visual">
-      	<origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+    	<!-- ONLY CHANGE XYZ -->
+      	<origin rpy="0 0 1.5707" xyz="0 0 0"/>
       	<geometry>
         <!--<cylinder length="0.04" radius="0.1"/>-->
-        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.001 0.001 0.001"/> 
+        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.00185 0.00185 0.00185"/> 
       	</geometry>
     	</visual>
 	</link>
@@ -100,11 +103,12 @@
     </inertial>
 
     <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0.155 -0.45 -0.11" rpy="0 0 -1.5707"/>
         <geometry>
-        <cylinder radius="0.05" length="0.1"/>
+        <!--<cylinder radius="0.05" length="0.1"/>-->
+        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/RpLidar.stl" scale="0.00185 0.00185 0.00185" />
         </geometry>
-        <material name="white" />
+        <material name="black" />
     </visual>
 
     <collision>

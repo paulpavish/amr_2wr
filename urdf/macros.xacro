@@ -65,16 +65,17 @@
     	<collision name="${link_name}_collision">
       	<origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
       	<geometry>
-        <cylinder length="0.04" radius="0.1"/>
-        <!--<mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.001 0.001 0.001"/>-->
+        <!--<cylinder length="0.04" radius="0.1"/>-->
+        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.00185 0.00185 0.00185"/>
       	</geometry>
     	</collision>
     	<visual name="${link_name}_visual">
     	<!-- ONLY CHANGE XYZ -->
-      	<origin rpy="0 0 1.5707" xyz="0 0 0"/>
+    	<!--<origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>-->
+      	<!--<origin rpy="0 0 1.5707" xyz="-0.1 0.225 -0.085"/>-->
       	<geometry>
         <!--<cylinder length="0.04" radius="0.1"/>-->
-        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.00185 0.00185 0.00185"/> 
+        <mesh filename="package://amr_2wr/models/amr_2wr/meshes/Wheel.stl" scale="0.00185 0.00185 0.00185"/>
       	</geometry>
     	</visual>
 	</link>

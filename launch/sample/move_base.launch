@@ -1,8 +1,9 @@
 <?xml version="1.0" ?>
 <launch>
+<arg name="map_file" value="wood_world"></arg>
 
  <!-- Run the map server --> 
-    <node name="map_server" pkg="map_server" type="map_server" args="$(find gazebo_2wd_robot)/new_map.pgm"/>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find amr_2wr)/map/$(arg map_file).pgm"/>
 
  <!--- Run AMCL --> 
     <include file="$(find amcl)/examples/amcl_omni.launch" />

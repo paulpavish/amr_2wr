@@ -1,6 +1,10 @@
 <?xml version="1.0" ?>
 <launch>
-  <arg name="scan_topic"  default="/g2wd/laser/scan" />
+<!--
+<include file="$(find amr_2wr)/launch/spawn_wood_world.launch"/>
+<include file="$(find amr_2wr)/launch/rviz.launch"/>
+-->
+  <arg name="scan_topic"  default="/amr_2wr/laser/scan" />
   <arg name="base_frame"  default="link_chassis"/>
   <arg name="odom_frame"  default="odom"/>
   

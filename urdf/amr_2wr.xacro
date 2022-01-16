@@ -11,10 +11,10 @@
   
   <xacro:link_wheel link_name="link_right_wheel"/>
   
-  <xacro:wheel_joint position="right" x="-0.05" y="0.15" z="0" child="link_right_wheel"/>
+  <xacro:wheel_joint position="right" x="-0.05" y="-0.15" z="0" child="link_right_wheel"/>
     
   <xacro:link_wheel link_name="link_left_wheel"/>
   
-  <xacro:wheel_joint position="left" x="-0.05" y="-0.15" z="0" child="link_left_wheel"/>
+  <xacro:wheel_joint position="left" x="-0.05" y="0.15" z="0" child="link_left_wheel"/>
   
 </robot>

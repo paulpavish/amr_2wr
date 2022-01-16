@@ -2,7 +2,7 @@
 <launch>
 
 <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <!--<arg name="world_name" value="$(find amr_2wr)/worlds/wood_world.world"/>-->
+    <arg name="world_name" value="$(find amr_2wr)/worlds/wood_world.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -17,5 +17,7 @@
   <arg name="z" default="0.0"/>
   
   <node name="spawn_robot" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model amr_2wr -x $(arg x) -y $(arg y) -z $(arg z)"/>
+  
+  <!--<include file="$(find amr_2wr)/launch/rviz.launch"/>-->
   
 </launch>	

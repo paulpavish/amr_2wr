@@ -1,9 +1,5 @@
 <?xml version="1.0" ?>
 <launch>
-<!--
-<include file="$(find amr_2wr)/launch/spawn_wood_world.launch"/>
-<include file="$(find amr_2wr)/launch/rviz.launch"/>
--->
   <arg name="scan_topic"  default="/amr_2wr/laser/scan" />
   <arg name="base_frame"  default="link_chassis"/>
   <arg name="odom_frame"  default="odom"/>
@@ -12,7 +8,7 @@
   
   <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"></node>
   
-  <node pkg="rviz" type="rviz" name="rviz"></node>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amr_2wr)/rviz/amr_2wr_mapping.rviz"/>
 
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
     <param name="base_frame" value="$(arg base_frame)"/>

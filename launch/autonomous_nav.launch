@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="map_file" default="$(find amr_2wr)/map/wood_world.yaml"/>
+  <arg name="model" default="$(find amr_2wr)/urdf/amr_2wr.xacro"/>
+  <!--<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />-->
+  
+  <param name="robot_description" command="$(find xacro)/xacro '$(find amr_2wr)/urdf/amr_2wr.xacro'"/>
+ 
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"></node>
+  
+  <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"></node>
+  
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amr_2wr)/rviz/amr_2wr_navigation.rviz"/>
+  
+ <rosparam file="$(find amr_2wr)/config/controllers.yaml" command="load"/>
+  <rosparam file="$(find amr_2wr)/config/joint_limits.yaml" command="load"/>
+  
+  
+  <include file="$(find amr_2wr)/launch/amcl.launch" />
+  <include file="$(find amr_2wr)/launch/move_base.launch" /> 
+  
+</launch>

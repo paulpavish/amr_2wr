@@ -4,6 +4,7 @@
   <node pkg="amcl" type="amcl" name="amcl">
       <param name="odom_model_type" value="diff"/>
       <param name="odom_alpha5" value="0.1"/>
+      <param name="scan_topic" value="/amr_2wr/laser/scan"/>
       
 <!--Lowering transform_tolerance value may lead to Expolration Error. Adjust this value according to the processor capacity -->
       <param name="transform_tolerance" value="0.5" /> 

@@ -1,5 +1,12 @@
+obstacle_range: 5.5
+raytrace_range: 6.0
 footprint: [[-0.12, -0.12], [-0.12, 0.12], [0.12, 0.12], [0.12, -0.12]]
 footprint_padding: 0.01
+inflation_g:
+    inflation_radius: 0.06
+    
+inflation_l:
+    inflation_radius: 0.03
 
 robot_base_frame: link_chassis
 update_frequency: 2
@@ -8,20 +15,16 @@ transform_tolerance: 0.5
 
 resolution: 0.05
 
-obstacle_range: 5.5
-raytrace_range: 6.0
+obstacles_laser:
+    observation_sources: laser
+    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /amr_2wr/laser/scan, inf_is_valid: true}
+
 
 #layer definitions
 static:
     map_topic: /map
     subscribe_to_updates: true
 
-obstacles_laser:
-    observation_sources: laser
-    laser: {data_type: LaserScan, clearing: true, marking: true, topic: /amr_2wr/laser/scan, inf_is_valid: true}
 
-inflation_g:
-    inflation_radius: 0.06
-    
-inflation_l:
-    inflation_radius: 0.03
+
+

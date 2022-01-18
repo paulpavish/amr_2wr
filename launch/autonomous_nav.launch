@@ -3,13 +3,15 @@
 
   <arg name="map_file" default="$(find amr_2wr)/map/wood_world.yaml"/>
   <arg name="model" default="$(find amr_2wr)/urdf/amr_2wr.xacro"/>
-  <!--<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />-->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
   
   <param name="robot_description" command="$(find xacro)/xacro '$(find amr_2wr)/urdf/amr_2wr.xacro'"/>
  
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"></node>
   
   <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"></node>
+  
+  <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher" args="1 0 0 0 0 0  link_chassis map"/>
   
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find amr_2wr)/rviz/amr_2wr_navigation.rviz"/>
   

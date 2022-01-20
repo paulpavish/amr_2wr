@@ -7,7 +7,7 @@
   <param name="robot_description" command="$(find xacro)/xacro '$(find amr_2wr)/urdf/amr_2wr.xacro'"/>
   
   <arg name="base_frame"  default="link_chassis"/>
-  <arg name="map_file" default="$(find amr_2wr)/map/wood_world.yaml"/>
+  <arg name="map_file" default="$(find amr_2wr)/map/wood_world_high_res.yaml"/>
   
   
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
